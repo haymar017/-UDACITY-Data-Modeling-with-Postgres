@@ -10,25 +10,27 @@ To simplify the process for Sparkify team, we performed Data modeling using Post
 
 ## Schema Design
 This project follows star schema to optimize the queires for the required analysis. As part of star schema, see below for the Facts and Dimensions.
-
 #### Fact Table
 - songplays-
     - Details: Records in log data associated with song plays i.e. records with page NextSong
     - Fields : songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent
-
 #### Dimension Tables
 - users
     - Details: Users in the app
     - Fields : user_id, first_name, last_name, gender, level
-
 - songs
     - Details: Songs in music database
     - Fields : song_id, title, artist_id, year, duration
-
 - artists 
     - Details: Artists in music database
     - Fields : artist_id, name, location, latitude, longitude
-
 - time 
     - Details: Timestamps of records in songplays broken down into specific units
     - Fields : start_time, hour, day, week, month, year, weekday
+
+## ETL Pipeline
+The ETL flow has been created using Python script.
+- Extract  : Raw data has been extracted from the Data folder which contains Json files (user activity and Songs meta data)
+- Transform: Transformation has been done for the required fields such as timestamp and and break down to multiple fields, Also for easier availability of data multiple dataset are joined and fetched and then loaded into the fact table
+- Load     : The finalized data gets loaded into the postgres database in above mentoned tables for easier availability.
+
