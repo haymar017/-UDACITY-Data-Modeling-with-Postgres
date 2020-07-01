@@ -46,7 +46,7 @@ Below are the files that are present in the repository:
 - *sql_queries.py*  : Contains all your sql queries, and is imported into the last three files above.
 
 ### How to run the code
-- To set up Database      : Run **create_tables.py** for creating tables and database from fresh or dropping all the table and database.
+- To set up Database      : Run **create_tables.py** for creating tables and database from fresh or dropping all the table and database.\
 Note: **create_tables.py** needs to be excecute once before doing any analysis.
 - To load data in Database: run **etl.py** to trigger the etl process and load the data in the database.
 
